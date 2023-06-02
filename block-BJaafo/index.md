@@ -1,7 +1,30 @@
-writeCode
 
-#### Writing your first test
+let fullname = getFullname("Harish","Kumar");
+console.log(fullname);
+//let expected = "Harish kumar"
 
-1. You will find the `todo.md` file inside the `code` folder of the repo
-2. Read the instructions in the `todo.md` file and solve them
-3. Write your JavaScript code in `script.js` file
+if(fullname!==expected){
+  throw new Error(`${fullname} is not equal to ${expected}`)
+}*/
+
+
+function totalAmount(amount= 1,taxrate= 1){
+let result = amount+(amount*taxrate)/100;
+return result;
+}
+
+let addedtax = totalAmount(1000,5);
+//console.log(addedtax);
+ let expected = 1050;
+
+
+ if (addedtax!== expected){
+  throw new Error(`${addedtax} is not equal to ${expected}`)
+ }
+
+
+ if (addedtax === expected){
+  throw new Error(`${addedtax} is not equal to ${expected}`)
+ }
+
+
