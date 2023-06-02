@@ -1,7 +1,37 @@
-writeCode
+function add(a,b){
+return a+b;
+}
 
-#### Writing test with framework and assertion
+function subtract(a,b){
+  return a-b;
+}
 
-1. You will find the `todo.md` file inside the `code` folder of the repo
-2. Read the instructions in the `todo.md` file and solve them
-3. Write your JavaScript code in `script.js` file
+function test(message,callback){
+try{
+  callback();
+  console.log(`Okay`,message)
+}catch(error){
+console.error(error);
+console.log("X",message)
+}
+}
+
+function testadd(){
+let result,expected;
+result = add(2,4);
+expected = 6;
+if(result !== expected){
+  throw new Error(`${result} is not equal to ${expected}`);
+}
+}
+test(`adding 2 and 4 `,testadd)
+
+function testsub(){
+result = subtract(20,4);
+expected = 16;
+if(result !== expected){
+  throw new Error(`${result} is not equal to ${expected}`);
+}
+}
+
+test(`subtract 20 and 4`,testsub)
